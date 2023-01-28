@@ -1,0 +1,9 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Leander Perera
+	email = 6547436+ltcperera@users.noreply.github.com
+[diff]
+	tool = diff
+[merge]
+	tool = diff
