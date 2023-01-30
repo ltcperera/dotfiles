@@ -30,11 +30,13 @@ def get_host_os():
 
 def get_linux_flavor():
     uname_output = subprocess.run(['uname', '-a'], stdout=subprocess.PIPE)
-    os_info = uname_output.stdout.decode().strip()
-    if "Ubuntu" in os_info:
+    os_info = uname_output.stdout.decode().strip().lower()
+    if "ubuntu" in os_info:
         return "Ubuntu"
     elif "arch" in os_info:
-        return "Arch Linux"
+        return "Arch"
+    elif "manjaro" in os_info:
+        return "Manjaro"
 
 detected_os = get_host_os()
 print("Detected OS:", detected_os)
