@@ -1,9 +1,23 @@
+"""Developer Environment Setup Script
+
+This script detects the current OS (Windows, Mac or Linux) and variant (Debian vs Arch), 
+then executes a corresponding setup script to setup the development environment accordingly.
+
+Usage:
+    python setup.py
+
+"""
+
 import platform
+import subprocess
+
+# Operating systems
 OS_NAME_WINDOWS = "Windows"
 OS_NAME_MAC = "Mac"
 OS_NAME_LINUX = "Linux"
+OS_NAME_UNKNOWN = "Unknown"
 
-def detect_os():
+def get_host_os():
     os_name = platform.system()
     if os_name == "Windows":
         return OS_NAME_WINDOWS
@@ -12,20 +26,20 @@ def detect_os():
     elif os_name == "Linux":
         return OS_NAME_LINUX
     else:
-        return "Unknown"
+        return OS_NAME_UNKNOWN
 
-def linux_flavor():
+def get_linux_flavor():
     os_info = platform.linux_distribution()
     return os_info[0], os_info[1]
 
-detected_os = detect_os()
+detected_os = get_host_os()
 print("Detected OS:", detected_os)
 
 if detected_os == OS_NAME_MAC:
     print("Bingo")
 
 if detected_os == OS_NAME_LINUX:
-    name, version = linux_flavor();
+    name, version = get_linux_flavor();
     print("OS:", name)
     print("Version:", version)
 
