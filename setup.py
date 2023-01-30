@@ -49,6 +49,7 @@ print("Detected OS:", detected_os)
 
 if detected_os == OS_NAME_MAC:
     print("Execute MacOS setup script...")
+    subprocess.call("./scripts/setup-macos.sh", shell=True)
 
 if detected_os == OS_NAME_LINUX:
     distro = get_linux_distro();
