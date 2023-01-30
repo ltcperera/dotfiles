@@ -29,8 +29,12 @@ def get_host_os():
         return OS_NAME_UNKNOWN
 
 def get_linux_flavor():
-    os_info = platform.linux_distribution()
-    return os_info[0], os_info[1]
+    uname_output = subprocess.run(['uname', '-a'], stdout=subprocess.PIPE)
+    os_info = uname_output.stdout.decode().strip()
+    if "Ubuntu" in os_info:
+        return "Ubuntu"
+    elif "arch" in os_info:
+        return "Arch Linux"
 
 detected_os = get_host_os()
 print("Detected OS:", detected_os)
@@ -39,7 +43,6 @@ if detected_os == OS_NAME_MAC:
     print("Bingo")
 
 if detected_os == OS_NAME_LINUX:
-    name, version = get_linux_flavor();
+    name = get_linux_flavor();
     print("OS:", name)
-    print("Version:", version)
 
