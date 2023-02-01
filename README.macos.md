@@ -21,6 +21,18 @@ including split sessions and sharing sessions.
 brew install tmux
 ```
 
+### Set Tmux configuration directory
+
+Backup the $HOME/.config/tmux directory and create a symlink to the dotfiles/.config/tmux directory
+
+```
+cd $HOME/.config
+mv tmux tmux_BACKUP
+ln -s <dotfiles_path>/.config/tmux tmux
+```
+
+### Start Tmux and type ` + I key to install the plugins
+
 ## Install Neovim
 
 ```
