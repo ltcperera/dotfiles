@@ -123,7 +123,5 @@ alias vim='/usr/local/bin/nvim'
 alias cat='bat'
 alias tree='exa --tree'
 
-#[ -f "/Users/leander/.ghcup/env" ] && source "/Users/leander/.ghcup/env" # ghcup-env
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
