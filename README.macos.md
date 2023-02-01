@@ -39,6 +39,16 @@ ln -s <dotfiles_path>/.config/tmux tmux
 brew install neovim
 ```
 
+### Set Neovim configuration directory
+
+Backup the $HOME/.config/nvim directory and create a symlink to point to dotfiles/.config/nvim.
+
+```
+cd $HOME/.config
+mv nvim nvim_BACKUP
+ln -s <dotfiles_path>/.config/nvim nvim
+```
+
 ## Install Useful Shell Utilities
 
 ### Exa, a modern replacement for ls
