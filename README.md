@@ -9,6 +9,7 @@ environment setup.
 - [Mac OS Setup](README.macos.md)
 - [Arch Linux Setup](README.archlinux.md)
 - [Windows Setup](README.windows.md)
+- [General Setup for POSIX platforms](README.posix.md)
 
 ## Automated Setup
 
