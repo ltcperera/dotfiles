@@ -1,3 +1,4 @@
+#!/bin/sh
 #
 # Setup for MacOS platforms
 #
@@ -61,3 +62,5 @@ if ! is_executable_found fzf; then
     echo
 fi
 
+# Install items common to all POSIX systems
+source scripts/setup-posix.sh
