@@ -2,13 +2,13 @@
 # Set of helper functions for POSIX platforms
 #
 
-function is_executable_not_found () {
+function is_executable_found () {
     if command -v $1 > /dev/null 2>&1; then
-        # Executable was not found
-        return 1
-    else
         # Executable was found
         return 0
+    else
+        # Executable was not found
+        return 1
     fi
 }
 
