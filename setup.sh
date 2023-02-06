@@ -8,6 +8,10 @@ else
         source /etc/os-release
         if [ "$ID" == "debian" ] || [ "$ID" == "ubuntu" ]; then
             source scripts/setup-ubuntu.sh
+        else 
+            if [ "$ID" == "manjaro" || [ "$ID" == "arch" ]; then
+                source scripts/setup-arch.sh
+            fi
         fi
     fi
 fi
