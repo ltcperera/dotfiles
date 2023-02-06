@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 os_name=$(uname -s)
 if [ "$os_name" == "Darwin" ]; then

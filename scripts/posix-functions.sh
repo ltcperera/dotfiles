@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Set of helper functions for POSIX platforms
 #

@@ -1,3 +1,3 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "Ubuntu/Debian Setup..."

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # General setup steps for POSIX platforms
 #
