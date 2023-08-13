@@ -113,4 +113,7 @@ return packer.startup(function(use)
 			ts_update()
 		end,
 	})
+
+	-- DAP (Debug Adapter Protocol)
+	use("mfussenegger/nvim-dap")
 end)
