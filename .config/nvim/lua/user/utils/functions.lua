@@ -1,19 +1,9 @@
+-- Add custom functions here
 local M = {}
 
+-- Example function (not used, but can be modified for other uses)
 function M.smart_quit()
-    local bufnr = vim.api.nvim_get_current_buf()
-    local modified = vim.api.nvim_buf_get_option(bufnr, "modified")
-    if modified then
-        vim.ui.input({
-            prompt = "You have unsaved changes. Save before quit? (y/n) ",
-        }, function(input)
-            if input == "y" then
-                vim.cmd "wq"
-            end
-        end)
-    else
-        vim.cmd "q!"
-    end
+	vim.cmd("confirm quit")
 end
 
 return M

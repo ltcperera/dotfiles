@@ -46,7 +46,8 @@ keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
 
 -- Quit
-keymap.set("n", "<leader>q", "<CMD>lua require('user.utils.functions').smart_quit()<CR>")
+-- keymap.set("n", "<leader>q", "<CMD>lua require('user.utils.functions').smart_quit()<CR>")
+keymap.set("n", "<leader>q", ":confirm quit<CR>")
 
 -- Bufferline mappings
 keymap.set("n", "<A-,>", "<cmd>BufferLineCyclePrev<cr>")
@@ -60,4 +61,3 @@ keymap.set("n", "<A-6>", "<cmd>lua require('bufferline').go_to_buffer(6, true)<c
 keymap.set("n", "<A-7>", "<cmd>lua require('bufferline').go_to_buffer(7, true)<cr>")
 keymap.set("n", "<A-8>", "<cmd>lua require('bufferline').go_to_buffer(8, true)<cr>")
 keymap.set("n", "<A-9>", "<cmd>lua require('bufferline').go_to_buffer(9, true)<cr>")
-
