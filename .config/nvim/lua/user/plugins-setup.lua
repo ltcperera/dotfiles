@@ -51,32 +51,21 @@ return packer.startup(function(use)
 	use("nvim-tree/nvim-tree.lua")
 
 	-- vs-code like icons
-	use("kyazdani42/nvim-web-devicons")
+	use("nvim-tree/nvim-web-devicons")
 
 	-- statusline
 	use("nvim-lualine/lualine.nvim")
-
-	-- Toggleterm
-	use("akinsho/toggleterm.nvim")
 
 	-- fuzzy finding w/ telescope
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 
 	-- Bufferline plugin emulates tabs in other editors
-	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
-	use("moll/vim-bbye")
-
-	-- Manage and setup LSP servers, linters and tools
-	use({
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
-	})
+	-- use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
+	-- use("moll/vim-bbye")
 
 	-- Autocomplete
 	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
 
@@ -85,16 +74,36 @@ return packer.startup(function(use)
 	use("saadparwaiz1/cmp_luasnip") -- for autocompletion
 	use("rafamadriz/friendly-snippets") -- useful snippets
 
-	-- Formatting & Linting
-	use({
-		"jose-elias-alvarez/null-ls.nvim", -- Configure formatters and Linters
-		"jayp0521/mason-null-ls.nvim", -- Bridge gap b/w/ mason & null-ls
-	})
+	-- Manage and setup LSP servers, linters and tools
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
 
-	-- additional functionality for typescript server (e.g. rename file & update imports)
-	use("jose-elias-alvarez/typescript.nvim")
-	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp UIs
+	-- configure lsp servers
+	use("neovim/nvim-lspconfig") -- easily configure language servers
+	use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
+	use({
+		"glepnir/lspsaga.nvim",
+		branch = "main",
+		requires = {
+			{ "nvim-tree/nvim-web-devicons" },
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
+	}) -- enhanced lsp uis
+	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
+
+	-- Formatting & Linting
+	use("jose-elias-alvarez/null-ls.nvim") -- Configure formatters and Linters
+	use("jayp0521/mason-null-ls.nvim") -- Bridge gap b/w/ mason & null-ls
+
+	-- treesitter configuration
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = function()
+			local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+			ts_update()
+		end,
+	})
 
 	-- Add diffview for git diff
 	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
@@ -105,14 +114,8 @@ return packer.startup(function(use)
 	-- Add vim-clang-format support
 	use("rhysd/vim-clang-format")
 
-	-- treesitter configuration
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = function()
-			local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-			ts_update()
-		end,
-	})
+	-- Toggleterm
+	use("akinsho/toggleterm.nvim")
 
 	-- DAP (Debug Adapter Protocol)
 	use("mfussenegger/nvim-dap")
