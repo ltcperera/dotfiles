@@ -17,7 +17,7 @@ require('lazy').setup({
 
     { import = 'plugins.colorscheme' },
     { import = 'plugins.lspsetup' },
-    { import = 'plugins.autocomplete' },
+    { import = 'plugins.nvim-cmp' },
     { import = 'plugins.lualine' },
     { import = 'plugins.indent' },
     { import = 'plugins.comment' },
