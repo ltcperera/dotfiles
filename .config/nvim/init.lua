@@ -3,6 +3,6 @@ if vim.g.vscode then
 else
     -- Neovim setup
     require("core.settings")
-    require("core.keymaps")
     require("nvconfig")
+    require("core.keymaps")
 end
