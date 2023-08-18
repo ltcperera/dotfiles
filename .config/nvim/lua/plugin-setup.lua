@@ -17,7 +17,16 @@ require('lazy').setup({
 
     { import = 'plugins.colorscheme' },
     { import = 'plugins.lspsetup' },
+
+    -- Configure VSCode like icons for Autocompletion
+    { import = 'plugins.lspkind' },
+
+    -- Configure Snippets
+    { import = 'plugins.luasnip' },
+
+    -- Autocomplete
     { import = 'plugins.nvim-cmp' },
+  
     { import = 'plugins.lualine' },
     { import = 'plugins.indent' },
     { import = 'plugins.comment' },
