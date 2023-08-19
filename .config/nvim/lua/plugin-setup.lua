@@ -16,7 +16,9 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 
     { import = 'plugins.colorscheme' },
+    { import = 'plugins.lsp.mason' },
     { import = 'plugins.lsp.lspconfig' },
+    { import = 'plugins.lsp.lspsaga' },
 
     -- Configure VSCode like icons for Autocompletion
     { import = 'plugins.lspkind' },
