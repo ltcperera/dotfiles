@@ -16,13 +16,10 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 
     { import = 'plugins.colorscheme' },
-    { import = 'plugins.lspsetup' },
+    { import = 'plugins.lsp.lspconfig' },
 
     -- Configure VSCode like icons for Autocompletion
     { import = 'plugins.lspkind' },
-
-    -- Configure Snippets
-    { import = 'plugins.luasnip' },
 
     -- Autocomplete
     { import = 'plugins.nvim-cmp' },
