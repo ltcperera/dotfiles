@@ -16,10 +16,12 @@ return {
             'folke/neodev.nvim',
         },
         config = function()
-            local lspconfig = require("lspconfig")
             local cmp_nvim_lsp = require("cmp_nvim_lsp")
             local typescript = require("typescript")
             local keymap = vim.keymap
+
+            -- Setup neovim lua configuration
+            require('neodev').setup()
 
             local on_attach = function(client, bufnr)
  
@@ -51,6 +53,40 @@ return {
             -- used to enable autocompletion (assign to every lsp server config)
             local capabilities = cmp_nvim_lsp.default_capabilities()
             capabilities.offsetEncoding = "utf-8"
+            
+            -- Specify servers to be configured
+            local servers = {
+                clangd = {},
+                gopls = {},
+                pyright = {},
+                rust_analyzer = {},
+                tsserver = {},
+                html = { filetypes = { 'html', 'twig', 'hbs' } },
+                lua_ls = {
+                    Lua = {
+                        workspace = { checkThirdParty = false },
+                        telemetry = { enable = false },
+                    },
+                },
+            }
+
+            -- Ensure the servers above are installed
+            local lspconfig = require("mason-lspconfig")
+
+            lspconfig.setup {
+                ensure_installed = vim.tbl_keys(servers),
+            }
+
+            lspconfig.setup_handlers {
+                function(server_name)
+                    require('lspconfig')[server_name].setup {
+                        capabilities = capabilities,
+                        on_attach = on_attach,
+                        settings = servers[server_name],
+                        filetypes = (servers[server_name] or {}).filetypes,
+                    }
+                end
+            }
 
             -- Change the Diagnostic symbols in the sign column (gutter)
             -- (not in youtube nvim video)
@@ -59,61 +95,6 @@ return {
 	            local hl = "DiagnosticSign" .. type
 	            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
             end
-
-            -- configure html server
-            lspconfig["html"].setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            -- configure typescript server with plugin
-            typescript.setup({
-                server = {
-                    capabilities = capabilities,
-                    on_attach = on_attach,
-                },
-            })
-
-            -- configure css server
-            lspconfig["cssls"].setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            -- configure tailwindcss server
-            lspconfig["tailwindcss"].setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            -- configure emmet language server
-            lspconfig["emmet_ls"].setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-                filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-            })
-
-            -- configure lua server (with special settings)
-            lspconfig["lua_ls"].setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-                settings = { -- custom settings for lua
-                    Lua = {
-                        -- make the language server recognize "vim" global
-                        diagnostics = {
-                            globals = { "vim" },
-                        },
-                        workspace = {
-                            -- make language server aware of runtime files
-                            library = {
-                                [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                                [vim.fn.stdpath("config") .. "/lua"] = true,
-                            },
-                        },
-                    },
-                },
-            })
-
         end
     },
 }
