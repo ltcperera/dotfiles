@@ -4,6 +4,7 @@ local g = vim.g
 
 -- Set leader and localleader to space
 g.mapleader = " " 
+g.maplocalleader = " " 
 
 -- Line Numbers
 o.relativenumber = true

@@ -18,14 +18,12 @@ return {
               end,
             },
         },
-        keys = {
-            -- Plugin will lazy load on these key mappings
-            { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
-            { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-        },
         config = function()
-            local telescope = require("telescope");
-            local actions = require("telescope.actions");
+            local telescope = require("telescope")
+            local actions = require("telescope.actions")
+            local builtin = require("telescope.builtin")
+            local keymap = vim.keymap
+
             telescope.setup({
                 -- Configure custom mappings used within plugin
                 defaults = {
@@ -38,6 +36,13 @@ return {
                     }
                 }
             })
+
+            keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]iles' })
+            keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[S]earch [F]iles' })
+            keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
+            keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
+            keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
+            keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
         end
     }
 }

@@ -15,8 +15,7 @@ return {
             -- Additional lua configuration, makes nvim stuff amazing!
             'folke/neodev.nvim',
         },
-        -- Init is executed when the plugin is loaded
-        init = function()
+        config = function()
             local lspconfig = require("lspconfig")
             local cmp_nvim_lsp = require("cmp_nvim_lsp")
             local typescript = require("typescript")
