@@ -25,7 +25,6 @@ require('lazy').setup({
 
     -- Autocomplete
     { import = 'plugins.nvim-cmp' },
-  
     { import = 'plugins.lualine' },
     { import = 'plugins.indent' },
     { import = 'plugins.comment' },
