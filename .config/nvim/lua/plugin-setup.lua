@@ -19,6 +19,7 @@ require('lazy').setup({
     { 'christoomey/vim-tmux-navigator' },
     { import = 'plugins.lsp.lspconfig' },
     { import = 'plugins.lsp.lspsaga' },
+    { import = 'plugins.guard' },
 
     -- Configure VSCode like icons for Autocompletion
     { import = 'plugins.lspkind' },
