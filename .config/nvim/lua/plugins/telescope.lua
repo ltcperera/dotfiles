@@ -38,25 +38,25 @@ return {
             })
 
             -- Find files within current working directory, respects .gitignore
-            keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
+            keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find Files' })
 
             -- Find word in current working directory
-            keymap.set('n', '<leader>fs', builtin.grep_string, { desc = '[F]ind [S]tring' })
+            keymap.set('n', '<leader>fs', builtin.grep_string, { desc = 'Grep for string' })
 
             -- Find string in current directory as you type
-            keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
+            keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Grep as you type' })
 
             -- List currently open buffers
             keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'List open buffers' })
 
             -- Search diagnostics
-            keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
+            keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Show diagnostics' })
 
             -- Search gitfiles
-            keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]iles' })
+            keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search Git Files' })
 
             -- Search help
-            keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
+            keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Search Help' })
         end
     }
 }
