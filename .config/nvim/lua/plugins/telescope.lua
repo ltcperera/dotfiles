@@ -57,6 +57,9 @@ return {
 
             -- Search help
             keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Search Help' })
+
+            -- Search references
+            keymap.set('n', 'gr', builtin.lsp_references, { desc = 'Search references' })
         end
     }
 }
