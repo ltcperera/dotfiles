@@ -20,7 +20,7 @@ keymap.set('n', '<leader>=', '<C-w>=', { desc = 'Make split windows equal width'
 
 -- Ctrl-s for saving
 keymap.set('n', '<C-s>', ':w<CR>', { desc = 'Save current file' })
-keymap.set('i', '<C-s>', '<ESC>:w<CR>', { desc = 'Save current file' })
+keymap.set('i', '<C-s>', '<ESC>:w<CR>==gi', { desc = 'Save current file' })
 
 -- Quit or close current buffer
 keymap.set('n', 'q', ':confirm quit<CR>', { desc = 'Quit. Confirm if needed.' })
