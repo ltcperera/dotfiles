@@ -35,7 +35,7 @@ o.signcolumn = "yes"
 o.backspace = "indent,eol,start"
 
 -- Clipboard
-o.clipboard:append("unnamedplus")
+-- o.clipboard:append("unnamedplus")
 
 -- Split Windows
 o.splitright = true
@@ -56,7 +56,3 @@ o.breakindent = true
 -- Set completeopt for better a completion experience
 o.completeopt = 'menuone,noselect'
 
--- Recommended settings from nvim-tree documentation
-g.loaded = 1
-g.loaded_netrw = 1
-g.loaded_netrwPlugin = 1
