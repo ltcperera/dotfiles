@@ -37,3 +37,8 @@ keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", { desc = "Move range down in visual
 -- Copy line up/down
 keymap.set('n', '<SA-k>', 'yyp', { desc = "Copy line up" })
 keymap.set('n', '<SA-j>', 'yypk', { desc = "Copy line down" })
+
+keymap.set('v', '<Tab>', '>gv', { desc = "Indent block right" })
+keymap.set('v', '<S-Tab>', '<gv', { desc = "Indent block left" })
+keymap.set('i', '<Tab>', '<C-t>', { desc = "Insert tab before current line left" })
+keymap.set('i', '<S-Tab>', '<C-d>', { desc = "Delete tab before current line right" })
