@@ -33,4 +33,5 @@ require('lazy').setup({
     { import = 'plugins.telescope' },
     { import = 'plugins.treesitter' },
     { import = 'plugins.toggleterm' },
+    { import = 'plugins.nvim-tree' },
 }, {})
