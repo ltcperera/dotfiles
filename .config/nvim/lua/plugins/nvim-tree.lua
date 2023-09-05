@@ -26,23 +26,13 @@ return {
             vim.keymap.set("n", "l", api.node.open.edit, opts("Open"))
             vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Directory"))
             vim.keymap.set("n", "H", api.tree.collapse_all, opts("Collapse"))
+            vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
         end
 
         nvim_tree.setup({
             on_attach = on_attach,
             view = {
                 width = 30,
-            },
-          	-- change folder arrow icons
-            renderer = {
-                icons = {
-                    glyphs = {
-                        folder = {
-                            arrow_closed = "", -- arrow when folder is closed
-                            arrow_open = "", -- arrow when folder is open                        },
-                        }
-                    },
-                },
             },
             actions = {
                 open_file = {
