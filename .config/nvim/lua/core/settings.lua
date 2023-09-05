@@ -3,12 +3,15 @@ local o = vim.opt
 local g = vim.g
 
 -- Set leader and localleader to space
-g.mapleader = " " 
-g.maplocalleader = " " 
+g.mapleader = " "
+g.maplocalleader = " "
 
 -- Line Numbers
 o.relativenumber = true
 o.number = true
+
+-- Search options
+o.incsearch = true
 
 -- Tabs & Indentation
 o.tabstop = 4
