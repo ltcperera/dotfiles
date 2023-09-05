@@ -27,12 +27,12 @@ keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { desc = 'Toggle NvimTree' }
 keymap.set('n', 'q', ':confirm quit<CR>', { desc = 'Quit. Confirm if needed.' })
 
 -- Move line/block of text up or down (normal, insert and visual modes)
-keymap.set('n', '<A-k>', ':m .-2<CR>==', { desc = "Move line up in normal mode" })
-keymap.set('n', '<A-j>', ':m .+1<CR>==', { desc = "Move line down in normal mode" })
-keymap.set('i', '<A-k>', '<Esc>:m .-2<CR>==gi', { desc = "Move line up in insert mode" })
-keymap.set('i', '<A-j>', '<Esc>:m .+1<CR>==gi', { desc = "Move line down in insert mode" })
-keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", { desc = "Move range up in visual mode" })
-keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", { desc = "Move range down in visual mode" })
+keymap.set('n', '<S-k>', ':m .-2<CR>==', { desc = "Move line up in normal mode" })
+keymap.set('n', '<S-j>', ':m .+1<CR>==', { desc = "Move line down in normal mode" })
+keymap.set('i', '<S-k>', '<Esc>:m .-2<CR>==gi', { desc = "Move line up in insert mode" })
+keymap.set('i', '<S-j>', '<Esc>:m .+1<CR>==gi', { desc = "Move line down in insert mode" })
+keymap.set('v', '<S-k>', ":m '<-2<CR>gv=gv", { desc = "Move range up in visual mode" })
+keymap.set('v', '<S-j>', ":m '>+1<CR>gv=gv", { desc = "Move range down in visual mode" })
 
 -- Copy line up/down
 keymap.set('n', '<SA-k>', 'yyp', { desc = "Copy line up" })
