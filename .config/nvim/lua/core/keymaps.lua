@@ -47,3 +47,7 @@ keymap.set('i', '<S-Tab>', '<C-d>', { desc = "Delete tab before current line rig
 -- Bindings for source navigation
 keymap.set('n', '<F12>', '<C-]>', { desc = "Goto definition" })
 keymap.set('n', '<C-->', '<C-o>', { desc = "Go back" })
+
+-- Copy from vim into clipboard
+keymap.set('n', '<leader>y', '\"+y', { desc = 'Copy to system clipboard' })
+keymap.set('v', '<leader>y', '\"+y', { desc = 'Copy to system clipboard' })
