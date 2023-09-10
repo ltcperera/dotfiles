@@ -34,4 +34,5 @@ require('lazy').setup({
     { import = 'plugins.treesitter' },
     { import = 'plugins.toggleterm' },
     { import = 'plugins.nvim-tree' },
+    { import = 'plugins.bufferline' },
 }, {})
