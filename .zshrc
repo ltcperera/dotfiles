@@ -112,8 +112,8 @@ fi
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
 export PATH=~/.npm-global/bin:/usr/local/Cellar/gnupg/2.2.23/bin:$PATH:/Users/leander/.gem/ruby/2.6.0/bin:~/.local/bin
-alias ll='exa -lah'
-alias ls='exa'
+alias ll='exa -lah --icons'
+alias ls='exa --icons'
 alias code='open -a "Visual Studio Code"'
 alias python=python3
 alias pip=pip3
