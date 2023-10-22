@@ -78,7 +78,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(z git zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode)
+#plugins=(fzf z zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode)
+# Disabled zsh-vi-mode temporarily due to issues with fzf when browsing history
+plugins=(fzf z zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -141,3 +143,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
