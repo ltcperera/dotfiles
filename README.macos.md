@@ -23,12 +23,12 @@ brew install tmux
 
 ### Set Tmux configuration directory
 
-Backup the $HOME/.config/tmux directory and create a symlink to the dotfiles/.config/tmux directory
+Backup (if needed) and remove the existing $HOME/.config/tmux directory. The 
+following stow command will create a symlink to the tmux configuration in this 
+repository.
 
 ```
-cd $HOME/.config
-mv tmux tmux_BACKUP
-ln -s <dotfiles_path>/.config/tmux tmux
+stow tmux
 ```
 
 ### Start Tmux and type ` + I key to install the plugins
@@ -41,12 +41,11 @@ brew install neovim
 
 ### Set Neovim configuration directory
 
-Backup the $HOME/.config/nvim directory and create a symlink to point to dotfiles/.config/nvim.
+Backup the $HOME/.config/nvim directory if needed and run the following command
+to symlink the nvim directory to the one in this repository. 
 
 ```
-cd $HOME/.config
-mv nvim nvim_BACKUP
-ln -s <dotfiles_path>/.config/nvim nvim
+stow nvim
 ```
 
 ## Install Useful Shell Utilities
