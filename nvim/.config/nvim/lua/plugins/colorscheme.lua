@@ -1,12 +1,11 @@
 return {
     -- Load our theme, nightfly
     {
-        "bluz71/vim-nightfly-colors",
-        name = "nightfly",
+        "oxfist/night-owl.nvim",
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme 'nightfly'
+            vim.cmd.colorscheme 'night-owl'
         end,
     },
 }
