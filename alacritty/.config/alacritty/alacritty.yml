@@ -90,3 +90,8 @@ key_bindings:
     - { key: Key9, mods: Alt, chars: "\x1b9" }
     - { key: Comma, mods: Alt, chars: "\x1b," }
     - { key: Period, mods: Alt, chars: "\x1b." }
+
+    # Keybindings for triggering vim leader + key combinations
+    - { key: Minus, mods: Command, chars: " -" }
+    - { key: Backslash, mods: Command, chars: " \\" }
+    - { key: 'W', mods: Command, chars: "q" }
