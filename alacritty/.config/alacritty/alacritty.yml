@@ -1,5 +1,7 @@
 # Custom configuration for Alacritty
 # See https://github.com/alacritty/alacritty/blob/master/alacritty.yml for documentation
+import:
+    - ~/dotfiles/alacritty/.config/alacritty/themes/night-owl.yml
 
 env:
     TERM: xterm-256color
@@ -35,39 +37,6 @@ font:
         x: 0
         y: 0
 
-colors:
-    # Default colors
-    primary:
-        background: "#010b17"
-        foreground: "#ebddf4"
-
-    # Selection colors
-    selection:
-        text: "#000000"
-        background: "#38ff9c"
-
-    # Normal colors
-    normal:
-        black: "#0b3b61"
-        red: "#ff3a3a"
-        green: "#52ffcf"
-        yellow: "#fff383"
-        blue: "#1376f8"
-        magenta: "#c792ea"
-        cyan: "#ff5dd4"
-        white: "#15fca2"
-
-    # Bright colors
-    bright:
-        black: "#62686c"
-        red: "#ff54b0"
-        green: "#73ffd8"
-        yellow: "#fcf4ad"
-        blue: "#378dfe"
-        magenta: "#ae81ff"
-        cyan: "#ff69d7"
-        white: "#5ffbbe"
-
 semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
 save_to_clipboard: false
@@ -94,4 +63,4 @@ key_bindings:
     # Keybindings for triggering vim leader + key combinations
     - { key: Minus, mods: Command, chars: " -" }
     - { key: Backslash, mods: Command, chars: " \\" }
-    - { key: 'W', mods: Command, chars: "q" }
+    - { key: "W", mods: Command, chars: "q" }
