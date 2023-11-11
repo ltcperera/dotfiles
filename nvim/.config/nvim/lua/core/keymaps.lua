@@ -18,7 +18,7 @@ keymap.set('n', '<leader>=', '<C-w>=', { desc = 'Make split windows equal width'
 
 -- Ctrl-s for saving
 keymap.set('n', '<C-s>', ':w<CR>', { desc = 'Save current file' })
-keymap.set('i', '<C-s>', '<ESC>:w<CR>==g', { desc = 'Save current file' })
+keymap.set('i', '<C-s>', '<ESC>:w<CR>==', { desc = 'Save current file' })
 
 -- nvim-tree
 keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { desc = 'Toggle NvimTree' })
