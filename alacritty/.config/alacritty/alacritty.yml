@@ -61,6 +61,7 @@ key_bindings:
     - { key: Period, mods: Alt, chars: "\x1b." }
 
     # Keybindings for triggering vim leader + key combinations
-    - { key: Minus, mods: Command, chars: " -" }
-    - { key: Backslash, mods: Command, chars: " \\" }
-    - { key: "W", mods: Command, chars: "q" }
+    - { key: Minus, mods: Command, chars: " -" }      # Command + - 
+    - { key: Backslash, mods: Command, chars: " \\" } # Command + \ 
+    - { key: "W", mods: Command, chars: "q" }         # Command + W => q
+    - { key: "S", mods: Command, chars: "\u0013" }    # Command + S => Ctrl + S
