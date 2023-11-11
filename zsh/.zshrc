@@ -118,19 +118,4 @@ alias vim='/usr/local/bin/nvim'
 alias cat='bat'
 alias tree='exa --tree'
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/leander/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/leander/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/leander/opt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/leander/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
