@@ -38,7 +38,7 @@ o.signcolumn = "yes"
 o.backspace = "indent,eol,start"
 
 -- Clipboard
--- o.clipboard:append("unnamedplus")
+o.clipboard:append("unnamedplus")
 
 -- Split Windows
 o.splitright = true
