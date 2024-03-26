@@ -1,17 +1,14 @@
-## Terminal Multiplexer Setup
+# Terminal Multiplexer Setup
 
-This is my tmux setup with customizations that I use for development at the terminal. Steps to get this setup are as follows:
+This custom tmux setup uses TPM as the plugin manager. TPM is already added as
+a submodule, so all thats needed are the following steps to get things setup.
 
-1. Clone the Tmux Plugin Manager as follows:
-
-```
-git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
-```
-
-2. Start tmux session:
+1. Start tmux session:
 
 ```
 tmux
 ```
 
-3. Hit the ` + I key to install the plugins.
+2. Hit the ` + I key to install the plugins.
+
+You should see confirmation that plugins were installed.
