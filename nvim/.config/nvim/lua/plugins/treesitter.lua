@@ -19,7 +19,7 @@ return {
                         init_selection = '<c-space>',
                         node_incremental = '<c-space>',
                         scope_incremental = '<c-s>',
-                        mode_decremental = '<c-d>',
+                        node_decremental = '<c-d>',
                     },
                 },
                 autotag = { enable = true },
