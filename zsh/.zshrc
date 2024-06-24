@@ -113,8 +113,8 @@ alias code='open -a "Visual Studio Code"'
 alias python=python3
 alias pip=pip3
 alias subl='open -a "Sublime Text"'
-alias vi='/usr/local/bin/nvim'
-alias vim='/usr/local/bin/nvim'
+alias vi='nvim'
+alias vim='nvim'
 alias cat='bat'
 alias tree='exa --tree'
 
