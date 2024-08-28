@@ -18,7 +18,7 @@
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "caps_lock_down",
+                                        "name": "modifier_set",
                                         "value": 1
                                     }
                                 ],
@@ -41,7 +41,7 @@
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "caps_lock_down",
+                                        "name": "modifier_set",
                                         "value": 1
                                     }
                                 ],
@@ -64,7 +64,7 @@
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "caps_lock_down",
+                                        "name": "modifier_set",
                                         "value": 1
                                     }
                                 ],
@@ -87,7 +87,7 @@
                                 "conditions": [
                                     {
                                         "type": "variable_if",
-                                        "name": "caps_lock_down",
+                                        "name": "modifier_set",
                                         "value": 1
                                     }
                                 ],
@@ -99,12 +99,15 @@
                         "description": "caps_lock hold/release",
                         "manipulators": [
                             {
-                                "from": { "key_code": "caps_lock" },
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "mandatory": ["any"] }
+                                },
                                 "to": [
                                     {
                                         "set_variable": {
                                             "key_up_value": 0,
-                                            "name": "caps_lock_down",
+                                            "name": "modifier_set",
                                             "value": 1
                                         }
                                     }
