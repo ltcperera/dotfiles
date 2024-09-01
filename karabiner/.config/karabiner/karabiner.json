@@ -96,6 +96,54 @@
                         ]
                     },
                     {
+                        "description": "caps_lock + 4 - Move cursor to end of line",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "4"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers" : [ "left_command" ]
+                                    }
+                                ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "modifier_set",
+                                        "value": 1
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "caps_lock + 6 - Move cursor to beginning of line",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "6"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers" : [ "left_command" ]
+                                    }
+                                ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "modifier_set",
+                                        "value": 1
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "caps_lock hold/release",
                         "manipulators": [
                             {
