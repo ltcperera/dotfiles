@@ -197,7 +197,7 @@
                             {
                                 "from": {
                                     "key_code": "caps_lock",
-                                    "modifiers": { "mandatory": ["any"] }
+                                    "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
                                     {
@@ -209,6 +209,76 @@
                                     }
                                 ],
                                 "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Right shift double tap enables vi mode",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_shift",
+                                    "modifiers" : { "optional" : ["any"] }
+                                },
+                                "to": [ 
+                                    {
+                                        "set_variable": {
+                                            "name": "modifier_set",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "conditions" : [
+                                    {
+                                        "type" : "variable_if",
+                                        "name" : "rs_dtapped",
+                                        "value" : 1
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Detect right shift double tap",
+                        "manipulators" : [
+                            {
+                                "type": "basic",
+                                "from" : {
+                                    "key_code" : "right_shift",
+                                    "modifiers" : {
+                                        "optional" : ["any"]
+                                    }
+                                },
+                                "to" : [ 
+                                    {
+                                        "set_variable" : {
+                                            "name" : "rs_dtapped",
+                                            "value" : 1
+                                        }
+                                    },
+                                    {
+                                        "key_code" : "right_shift"
+                                    }
+                                ],
+                                "to_delayed_action" : {
+                                    "to_if_invoked" : [
+                                        {
+                                            "set_variable": {
+                                                "name" : "rs_dtapped",
+                                                "value": 0
+                                            }
+                                        }
+                                    ],
+                                    "to_if_canceled" : [
+                                        {
+                                            "set_variable": {
+                                                "name" : "rs_dtapped",
+                                                "value" : 0
+                                            }
+                                        }
+                                    ]
+                                }
                             }
                         ]
                     }
